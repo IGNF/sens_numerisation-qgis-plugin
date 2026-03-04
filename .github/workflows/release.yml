@@ -21,7 +21,12 @@ jobs:
 
       - name: Build plugin zip
         run: |
-          zip -r "IGN_sens_numerisation.zip" . -x ".git/*" ".github/*"
+          mkdir -p IGN_sens_numerisation
+          rsync -av --progress . IGN_sens_numerisation/ \
+            --exclude .git \
+            --exclude .github \
+            --exclude IGN_sens_numerisation
+          zip -r IGN_sens_numerisation.zip IGN_sens_numerisation
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
