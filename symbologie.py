@@ -1,8 +1,9 @@
-from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QMessageBox
+from qgis.PyQt.QtGui import QColor
 from qgis.core import (QgsRendererCategory, QgsCategorizedSymbolRenderer,QgsSimpleMarkerSymbolLayer,
                        QgsSymbol, QgsWkbTypes, QgsMarkerLineSymbolLayer,QgsSingleSymbolRenderer,
                        QgsRuleBasedRenderer, QgsProject)
+
+from .mapping_version import *
 
 class SensNumerisation:
     def __init__(self, iface):
